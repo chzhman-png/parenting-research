@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Parenting Research — 리서치 노트 모음</title>
+<style>
+  :root{
+    --ink:#EDEEF4; --paper:#0A0A0D; --paper-raised:#131318; --accent:#9AA3F5; --accent-ink:#12121C;
+    --accent-soft:#1B1D33; --warn:#E2916D; --line:#24252E; --muted:#A6A9BE; --muted-2:#6E7185;
+    --shadow: 0 1px 2px rgba(0,0,0,.5), 0 14px 32px -16px rgba(0,0,0,.75);
+    --font-sans:'Pretendard Variable','Pretendard','Apple SD Gothic Neo','Segoe UI',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',system-ui,sans-serif;
+    --font-mono:ui-monospace,'SF Mono',Consolas,'Liberation Mono',monospace;
+  }
+  *{box-sizing:border-box;}
+  html{background:var(--paper);}
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-sans); line-height:1.6; -webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);}
+  a:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:2px;}
+
+  .wrap{max-width:720px; margin:0 auto; padding:0 20px 96px;}
+
+  header.hero{
+    padding:56px 20px 30px; border-bottom:1px solid var(--line);
+    background:linear-gradient(180deg, var(--accent-soft) 0%, transparent 100%);
+  }
+  .hero-inner{max-width:720px; margin:0 auto;}
+  .eyebrow{
+    font-family:var(--font-mono); font-size:12px; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--accent); display:flex; align-items:center; gap:9px; margin:0 0 14px;
+  }
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);}
+  h1{font-weight:800; font-size:clamp(26px,6vw,36px); line-height:1.22; margin:0 0 10px; text-wrap:balance; letter-spacing:-.01em;}
+  .hero p.sub{font-size:16px; color:var(--muted); margin:0; max-width:56ch;}
+
+  main{padding-top:36px;}
+  .list-head{font-size:13px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.04em; margin:0 0 16px;}
+
+  .doc-card{
+    display:block; text-decoration:none; color:var(--ink);
+    border:1px solid var(--line); background:var(--paper-raised); border-radius:14px;
+    padding:20px 22px; margin-bottom:14px; box-shadow:var(--shadow); transition:border-color .15s ease, transform .15s ease;
+  }
+  .doc-card:hover{border-color:var(--accent); transform:translateY(-1px);}
+  .doc-card .tags{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px;}
+  .doc-card .tag{
+    font-family:var(--font-mono); font-size:10.5px; letter-spacing:.05em; text-transform:uppercase;
+    color:var(--accent); background:var(--accent-soft); border-radius:5px; padding:3px 8px;
+  }
+  .doc-card h2{font-size:19px; font-weight:800; margin:0 0 6px; text-wrap:balance;}
+  .doc-card p{font-size:14px; color:var(--muted); margin:0 0 10px; line-height:1.55;}
+  .doc-card .meta{font-family:var(--font-mono); font-size:11.5px; color:var(--muted-2); display:flex; gap:12px; flex-wrap:wrap;}
+  .doc-card .arrow{float:right; color:var(--muted-2); font-size:14px;}
+  .doc-card:hover .arrow{color:var(--accent);}
+
+  .empty-note{
+    border:1px dashed var(--line); border-radius:12px; padding:18px 20px; color:var(--muted-2); font-size:13.5px;
+  }
+
+  footer{max-width:720px; margin:0 auto; padding:36px 20px 60px; color:var(--muted-2); font-size:12.5px;
+    border-top:1px solid var(--line); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
+  footer a{color:var(--muted-2);}
+
+  @media (max-width:480px){
+    .wrap{padding:0 16px 80px;}
+    header.hero{padding:44px 16px 24px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow"><span class="dot"></span>Parenting Research</p>
+    <h1>리서치 노트 모음</h1>
+    <p class="sub">가족과 공유하기 위해 정리한 육아·생활 리서치 문서 목록입니다. 출처와 수집일을 함께 표기합니다.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <p class="list-head">문서 (1)</p>
+
+  <a class="doc-card" href="./newborn-essentials.html">
+    <span class="arrow">→</span>
+    <div class="tags"><span class="tag">육아용품</span><span class="tag">체크리스트</span></div>
+    <h2>신생아 필수 육아용품 가이드</h2>
+    <p>조리원 퇴소 후 무엇부터 사야 할지 — 10평대 주거 기준으로 아기 발달단계에 맞춰 정리했습니다.</p>
+    <div class="meta"><span>2026-08-01</span><span>아이사랑 · 질병관리청 · 법제처</span></div>
+  </a>
+
+  <!-- 새 문서가 늘어나면 위와 같은 형식의 .doc-card를 추가한다 -->
+</main>
+
+<footer>
+  <span>chzhman-png/parenting-research</span>
+  <span>정적 사이트 · GitHub Pages</span>
+</footer>
+
+</body>
+</html>

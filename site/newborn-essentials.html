@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>신생아 필수 육아용품 가이드 — 10평대 · 발달단계별</title>
+<style>
+  /* 다크 전용 고정 팔레트 — 시스템/뷰어 테마와 무관하게 항상 이 값을 쓴다 (사용자 요청) */
+  :root{
+    --ink:#EDEEF4;
+    --paper:#0A0A0D;
+    --paper-raised:#131318;
+    --accent:#9AA3F5;
+    --accent-ink:#12121C;
+    --accent-soft:#1B1D33;
+    --warn:#E2916D;
+    --warn-soft:#2E2013;
+    --line:#24252E;
+    --muted:#A6A9BE;
+    --muted-2:#6E7185;
+    --tag-gov:#9AA3F5;
+    --tag-gov-soft:#1B1D33;
+    --tag-2nd:#6E7185;
+    --tag-2nd-soft:#1C1D26;
+    --shadow: 0 1px 2px rgba(0,0,0,.5), 0 14px 32px -16px rgba(0,0,0,.75);
+    --font-sans:'Pretendard Variable','Pretendard','Apple SD Gothic Neo','Segoe UI',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Noto Sans KR',system-ui,sans-serif;
+    --font-mono:ui-monospace,'SF Mono',Consolas,'Liberation Mono',monospace;
+  }
+
+  *{box-sizing:border-box;}
+  html{background:var(--paper);}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--font-sans); line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  a{color:var(--accent);}
+  a:focus-visible, button:focus-visible, summary:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:2px;}
+
+  .wrap{max-width:720px; margin:0 auto; padding:0 20px 96px;}
+
+  header.hero{
+    padding:40px 20px 26px; border-bottom:1px solid var(--line);
+    background:linear-gradient(180deg, var(--accent-soft) 0%, transparent 100%);
+  }
+  .hero-inner{max-width:720px; margin:0 auto;}
+  .backlink{display:inline-flex; align-items:center; gap:6px; text-decoration:none; color:var(--muted); font-size:13px; font-weight:600; margin-bottom:14px;}
+  .backlink:hover{color:var(--accent);}
+  .eyebrow{
+    font-family:var(--font-mono); font-size:12px; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--accent); display:flex; align-items:center; gap:9px; margin:0 0 14px;
+  }
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);}
+  h1{
+    font-family:var(--font-sans); font-weight:800; font-size:clamp(26px,6vw,36px); line-height:1.22;
+    margin:0 0 10px; text-wrap:balance; letter-spacing:-.01em;
+  }
+  .hero p.sub{font-size:16px; color:var(--muted); margin:0 0 20px; max-width:56ch;}
+  .meta-row{display:flex; flex-wrap:wrap; gap:8px 10px;}
+  .meta-pill{
+    font-family:var(--font-mono); font-size:11.5px; color:var(--muted); border:1px solid var(--line);
+    border-radius:100px; padding:5px 12px; background:var(--paper-raised);
+  }
+
+  .overview{padding:26px 0 6px;}
+  .overview h2{font-size:14px; font-weight:700; color:var(--muted); margin:0 0 4px; text-transform:uppercase; letter-spacing:.04em;}
+  .overview p.lead{font-size:15px; color:var(--muted); margin:0 0 14px;}
+  .timeline-chart{width:100%; display:block; border-radius:10px;}
+
+  nav.jump{
+    position:sticky; top:0; z-index:20; background:color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
+  }
+  nav.jump .scroller{max-width:720px; margin:0 auto; padding:10px 20px; display:flex; gap:8px; overflow-x:auto; scrollbar-width:none;}
+  nav.jump .scroller::-webkit-scrollbar{display:none;}
+  nav.jump a{
+    flex:0 0 auto; text-decoration:none; color:var(--ink); font-size:13px; font-weight:700; padding:7px 13px;
+    border-radius:100px; border:1px solid var(--line); background:var(--paper-raised); white-space:nowrap;
+  }
+  nav.jump a:hover{border-color:var(--accent); color:var(--accent);}
+
+  main{padding-top:8px;}
+  section{padding:36px 0; border-bottom:1px solid var(--line); scroll-margin-top:64px;}
+  section:last-of-type{border-bottom:none;}
+
+  .section-head{display:flex; align-items:baseline; gap:12px; margin-bottom:4px;}
+  .stage-badge{
+    font-family:var(--font-mono); font-size:14px; font-weight:800; color:var(--accent-ink);
+    background:var(--accent); border-radius:7px; padding:3px 10px; white-space:nowrap; font-variant-numeric:tabular-nums;
+  }
+  h2.title{font-size:22px; font-weight:800; margin:0; text-wrap:balance; letter-spacing:-.005em;}
+  .subtitle{color:var(--muted); font-size:15px; margin:6px 0 18px;}
+
+  .keyline{
+    display:flex; align-items:center; gap:14px; padding:16px 18px; margin:0 0 18px;
+    background:var(--accent-soft); border-radius:12px; border:1px solid color-mix(in srgb, var(--accent) 30%, var(--line));
+  }
+  .keyline .icon{font-size:26px; line-height:1; flex:0 0 auto;}
+  .keyline .text{font-size:18px; font-weight:800; line-height:1.35; color:var(--ink);}
+  .keyline .text small{display:block; font-weight:500; font-size:13px; color:var(--muted); margin-top:3px;}
+
+  .points{list-style:none; margin:0 0 6px; padding:0; display:grid; grid-template-columns:1fr; gap:8px;}
+  .points li{
+    display:flex; gap:10px; align-items:flex-start; font-size:14.5px; font-weight:600;
+    padding:11px 13px; background:var(--paper-raised); border:1px solid var(--line); border-radius:10px;
+    box-shadow:var(--shadow);
+  }
+  .points li .ico{font-size:17px; flex:0 0 auto; line-height:1.3;}
+  .points li .label small{display:block; font-weight:400; font-size:12.5px; color:var(--muted-2); margin-top:2px;}
+  .points li.legal{border-color:color-mix(in srgb, var(--warn) 40%, var(--line));}
+  .points li.legal .ico{filter:none;}
+
+  .space-callout{
+    border-radius:12px; padding:16px 18px; margin:18px 0 0; background:var(--paper-raised);
+    border:1.5px dashed var(--accent);
+  }
+  .space-callout .head{display:flex; align-items:center; gap:8px; font-weight:800; font-size:13.5px; margin-bottom:8px; color:var(--accent);}
+  .space-callout ul{margin:0; padding-left:18px;}
+  .space-callout li{margin-bottom:6px; font-size:14px;}
+  .space-callout p{margin:0 0 8px; font-size:14px;}
+
+  .warn-box{
+    border-radius:12px; padding:16px 18px; margin:18px 0; background:var(--warn-soft);
+    border:1px solid color-mix(in srgb, var(--warn) 35%, var(--line));
+  }
+  .warn-box .head{display:flex; align-items:center; gap:8px; font-weight:800; font-size:13.5px; margin-bottom:8px; color:var(--warn);}
+  .warn-box p:last-child, .warn-box ul:last-child{margin-bottom:0;}
+  .warn-box ul{margin:0; padding-left:18px;}
+  .warn-box li{margin-bottom:6px; font-size:14px;}
+
+  details.evidence{margin-top:16px;}
+  details.evidence > summary{
+    cursor:pointer; list-style:none; display:flex; align-items:center; gap:6px;
+    font-size:13px; font-weight:700; color:var(--muted); padding:8px 0; user-select:none;
+  }
+  details.evidence > summary::-webkit-details-marker{display:none;}
+  details.evidence > summary::before{content:"▸"; color:var(--accent); transition:transform .15s ease;}
+  details.evidence[open] > summary::before{transform:rotate(90deg);}
+  details.evidence[open] > summary{color:var(--ink);}
+  .evidence-body{padding:4px 0 4px 4px;}
+
+  .fact{
+    background:var(--paper-raised); border:1px solid var(--line); border-left:3px solid var(--tag-gov);
+    border-radius:8px; padding:13px 15px; margin:0 0 12px; font-size:14px;
+  }
+  .fact .tag{display:inline-block; font-family:var(--font-mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--tag-gov); background:var(--tag-gov-soft); border-radius:4px; padding:2px 7px; margin-bottom:7px;}
+  .interp{background:transparent; border:1px dashed var(--line); border-radius:8px; padding:13px 15px; margin:0 0 12px; font-size:14px;}
+  .interp .tag{display:inline-block; font-family:var(--font-mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--tag-2nd); background:var(--tag-2nd-soft); border-radius:4px; padding:2px 7px; margin-bottom:7px;}
+  .interp .falsify{display:block; margin-top:7px; font-size:12.5px; color:var(--muted-2);}
+  .interp .falsify b{color:var(--muted);}
+
+  .stat-strip{display:grid; grid-template-columns:repeat(auto-fit,minmax(110px,1fr)); gap:1px; background:var(--line);
+    border:1px solid var(--line); border-radius:8px; overflow:hidden; margin:0 0 14px;}
+  .stat{background:var(--paper-raised); padding:10px 12px;}
+  .stat .k{font-size:10.5px; color:var(--muted-2); text-transform:uppercase; letter-spacing:.06em; margin-bottom:3px;}
+  .stat .v{font-family:var(--font-mono); font-size:14px; font-variant-numeric:tabular-nums; font-weight:700;}
+
+  p{margin:0 0 12px; font-size:14.5px;}
+
+  .product-grid{display:flex; flex-direction:column; gap:10px; margin:0 0 8px;}
+  .product-card{border:1px solid var(--line); background:var(--paper-raised); border-radius:12px; padding:14px 16px; box-shadow:var(--shadow); display:flex; gap:12px;}
+  .product-card .ico{font-size:22px; flex:0 0 auto; width:34px; height:34px; display:flex; align-items:center; justify-content:center;
+    background:var(--accent-soft); border-radius:9px;}
+  .product-card .body{flex:1; min-width:0;}
+  .product-card .row1{display:flex; justify-content:space-between; align-items:baseline; gap:10px; flex-wrap:wrap;}
+  .product-card .cat{font-family:var(--font-mono); font-size:10px; letter-spacing:.06em; text-transform:uppercase; color:var(--accent);}
+  .product-card .name{font-weight:800; font-size:15px; margin:3px 0 5px;}
+  .product-card .name a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--accent);}
+  .product-card .name a:hover{color:var(--accent);}
+  .product-card .review{font-size:13px; color:var(--muted); margin:0;}
+  .product-card .linktype{font-family:var(--font-mono); font-size:10px; color:var(--muted-2); white-space:nowrap;}
+  .unverified-list{margin:10px 0 0; padding-left:18px; font-size:13px; color:var(--muted);}
+
+  .source-group{margin-bottom:18px;}
+  .source-group h3{margin:0 0 8px; font-size:13px; font-weight:800; color:var(--muted);}
+  ol.sources{margin:0; padding-left:18px; font-size:13.5px;}
+  ol.sources li{margin-bottom:7px;}
+  ol.sources .date{color:var(--muted-2); font-size:11.5px; font-family:var(--font-mono);}
+
+  footer{max-width:720px; margin:0 auto; padding:30px 20px 60px; color:var(--muted-2); font-size:12.5px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
+  footer a{color:var(--muted-2);}
+
+  @media (max-width:480px){
+    .wrap{padding:0 16px 80px;}
+    header.hero{padding:30px 16px 20px;}
+    section{padding:28px 0;}
+    .keyline .text{font-size:16.5px;}
+  }
+  @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto !important; animation:none !important; transition:none !important;}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <a class="backlink" href="./">← 목록으로</a>
+    <p class="eyebrow"><span class="dot"></span>리서치 노트 · 외부 공유용</p>
+    <h1>신생아 필수 육아용품 가이드</h1>
+    <p class="sub">조리원 퇴소 후 무엇부터 사야 할지 — 10평대 주거를 기준으로, 아기 발달단계에 맞춰 순서대로 정리했습니다.</p>
+    <div class="meta-row">
+      <span class="meta-pill">수집일 2026-08-01</span>
+      <span class="meta-pill">1차 출처: 아이사랑 · 질병관리청 · 법제처</span>
+      <span class="meta-pill">기준: 전용면적 10평대(약 33㎡)</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap overview">
+  <h2>0~9개월 한눈에 보기</h2>
+  <p class="lead">막대가 길수록 해당 시기 아기 몸무게(평균 범위)가 무거워집니다. 아이사랑 포털 기준.</p>
+  <canvas class="timeline-chart" id="growthChart" aria-hidden="true" height="150"></canvas>
+</div>
+
+<nav class="jump" aria-label="구간 이동">
+  <div class="scroller">
+    <a href="#day0">퇴소 당일</a>
+    <a href="#m0-1">0–1개월</a>
+    <a href="#m1-3">1–3개월</a>
+    <a href="#m4-6">4–6개월</a>
+    <a href="#m6-9">6–9개월</a>
+    <a href="#legal">법적·안전</a>
+    <a href="#products">제품·구매링크</a>
+    <a href="#pitfalls">주의할 점</a>
+    <a href="#sources">출처</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <section id="day0" style="padding-top:30px;">
+    <div class="section-head"><span class="stage-badge">D-DAY</span><h2 class="title">조리원 퇴소 당일</h2></div>
+    <p class="subtitle">최소 필수만 챙기면 됩니다</p>
+
+    <div class="keyline">
+      <span class="icon">🚗</span>
+      <span class="text">카시트 미장착 시 과태료 6만원<small>도로교통법 제50조 1항 — 만 6세 미만 전원 법적 의무</small></span>
+    </div>
+
+    <ul class="points">
+      <li class="legal"><span class="ico">🚗</span><span class="label">카시트 (신생아용)<small>법적 필수 — 퇴소 이동 시 반드시 필요</small></span></li>
+      <li><span class="ico">🧣</span><span class="label">속싸개 / 겉싸개</span></li>
+      <li><span class="ico">🧷</span><span class="label">신생아 기저귀</span></li>
+      <li><span class="ico">👕</span><span class="label">옷 2~3벌, 손싸개·발싸개, 모자</span></li>
+      <li><span class="ico">🍼</span><span class="label">젖병 2개 이상 + 분유<small>모유 수유 예정이어도 비상용 구비 권장</small></span></li>
+      <li><span class="ico">📄</span><span class="label">출생신고 서류<small>별도 가방에 미리 분리해두면 당일 혼선이 적음</small></span></li>
+    </ul>
+
+    <details class="evidence">
+      <summary>근거·해석 보기</summary>
+      <div class="evidence-body">
+        <div class="fact"><span class="tag">법제처 · 1차 자료</span><p style="margin:0;">카시트는 도로교통법 제50조 1항에 의해 만 6세 미만 탑승 시 법적 의무이며, 미장착 시 과태료 6만원이 부과됩니다.</p></div>
+        <div class="interp"><span class="tag">해석 · 단일 관찰</span><p style="margin:0;">조리원이 제공하는 항목(수건·산모복·기저귀 등)을 입소 안내문에서 먼저 확인하면 10평대에서 특히 중요한 중복구매를 피할 수 있습니다.</p><span class="falsify"><b>반증 가능성</b> — 조리원마다 제공 범위가 달라, 이 판단은 조리원별 안내문 확인이 전제입니다.</span></div>
+      </div>
+    </details>
+  </section>
+
+  <section id="m0-1">
+    <div class="section-head"><span class="stage-badge">0–1</span><h2 class="title">신생아기</h2></div>
+    <p class="subtitle">리듬 잡기 시기 — 교육·자극보다 수유·수면 패턴이 우선</p>
+
+    <div class="keyline">
+      <span class="icon">🛏️</span>
+      <span class="text">매트리스는 단단하게, 베개는 없이<small>영아돌연사증후군 예방 — 12개월 이전 공통 권고</small></span>
+    </div>
+
+    <ul class="points">
+      <li><span class="ico">🛏️</span><span class="label">아기침대 + 단단한 매트리스 + 방수커버</span></li>
+      <li><span class="ico">🧺</span><span class="label">얇은 이불 2장<small>베개는 사용하지 않음</small></span></li>
+      <li><span class="ico">🛁</span><span class="label">신생아 욕조, 저자극 세정제, 체온계</span></li>
+      <li><span class="ico">🧼</span><span class="label">기저귀 발진크림, 무향·무알코올 물티슈</span></li>
+    </ul>
+
+    <div class="space-callout">
+      <div class="head">📐 10평대 특화 — 범퍼침대 공간 문제</div>
+      <p>별도 아기침대 놓을 공간이 빠듯하다면 두 갈래 대안:</p>
+      <ul>
+        <li><strong>저상형 패밀리침대 + 침대가드</strong> — 나중에 싱글로 분리 가능, 가구 재구매 불필요</li>
+        <li><strong>베이비룸(ㅁ자 매트+토퍼)</strong> — 침대 놓을 공간 자체가 없을 때. 낙상방지·통풍 우수</li>
+      </ul>
+    </div>
+
+    <details class="evidence">
+      <summary>근거·해석 보기</summary>
+      <div class="evidence-body">
+        <div class="fact"><span class="tag">2건 관찰 · 육아템연구소 / 굿대디</span><p style="margin:0;">매트리스는 단단해야 하고 베개를 쓰지 않아야 한다는 권고가 두 매체에서 공통 확인됩니다 (원출처인 미국소아과학회 문서 자체는 재인용만 확인, 미확인).</p></div>
+        <div class="interp"><span class="tag">해석 · 근거 약함(개인 후기 1건)</span><p style="margin:0;">위 대안은 실사용 후기(Threads, 개인 경험담) 기반으로 통계적 근거는 아닙니다.</p><span class="falsify"><b>반증 가능성</b> — 10평대에서도 표준 아기침대를 문제없이 배치한 사례가 다수 확인되면 "단일 관찰"로 재분류.</span></div>
+      </div>
+    </details>
+  </section>
+
+  <section id="m1-3">
+    <div class="section-head"><span class="stage-badge">1–3</span><h2 class="title">목가누기 · 사회적 미소</h2></div>
+    <p class="subtitle">30cm 이내를 또렷이 보고, 목을 가누기 시작합니다</p>
+
+    <div class="keyline">
+      <span class="icon">🧸</span>
+      <span class="text">목가누기 시작 — 유모차·아기띠는 지금부터<small>서둘러 미리 살 필요 없음</small></span>
+    </div>
+
+    <ul class="points">
+      <li><span class="ico">🧺</span><span class="label">유모차(완전히 눕힐 수 있는 형태)</span></li>
+      <li><span class="ico">🎒</span><span class="label">아기띠</span></li>
+      <li><span class="ico">🎐</span><span class="label">모빌, 딸랑이</span></li>
+      <li><span class="ico">🪑</span><span class="label">바운서<small>선택 — 이 시기 이후 구매 권장 의견 다수</small></span></li>
+    </ul>
+
+    <div class="space-callout">
+      <div class="head">📐 10평대 특화</div>
+      <p style="margin:0;">유모차는 실내 보관 시 부피가 크므로, 접이식·콤팩트 폴딩형 위주로 이 시기 전후 구매를 미루는 편이 유리합니다.</p>
+    </div>
+
+    <details class="evidence">
+      <summary>근거·해석 보기</summary>
+      <div class="evidence-body">
+        <div class="stat-strip">
+          <div class="stat"><div class="k">체중 (남)</div><div class="v">4.5–6.4kg</div></div>
+          <div class="stat"><div class="k">체중 (여)</div><div class="v">4.2–5.8kg</div></div>
+          <div class="stat"><div class="k">시력</div><div class="v">30cm 이내</div></div>
+        </div>
+        <div class="fact"><span class="tag">아이사랑 포털 · 보건복지부 산하 · 1차 자료</span><p style="margin:0;">30cm 이내 물체를 뚜렷이 보고 움직이는 장난감을 따라보며, 양육자 목소리를 구분합니다. 목가누기가 시작되고 3개월경 뒤집기를 시도하며, 사회적 미소와 옹알이가 나타납니다.</p></div>
+        <div class="interp"><span class="tag">해석 · 2건 이상 관찰</span><p style="margin:0;">목가누기가 시작되는 이 시기부터 아기띠·바운서 사용이 안전 측면에서 자연스러워지므로, 조리원 퇴소 직후 서둘러 구매할 필요는 없습니다.</p></div>
+      </div>
+    </details>
+  </section>
+
+  <section id="m4-6">
+    <div class="section-head"><span class="stage-badge">4–6</span><h2 class="title">뒤집기 · 이유식 준비</h2></div>
+    <p class="subtitle">손을 뻗어 잡고, 뒤집기를 시작합니다</p>
+
+    <div class="keyline">
+      <span class="icon">🥄</span>
+      <span class="text">이유식 시작 시기: 생후 4~6개월<small>WHO·국내 소아청소년과학회 공통 권장</small></span>
+    </div>
+
+    <ul class="points">
+      <li><span class="ico">🍽️</span><span class="label">이유식 의자(하이체어 또는 부스터)</span></li>
+      <li><span class="ico">🥣</span><span class="label">조리도구, 실리콘 식기</span></li>
+      <li><span class="ico">🛡️</span><span class="label">모서리 보호대, 콘센트 커버</span></li>
+      <li><span class="ico">🧴</span><span class="label">역류방지쿠션<small>선택, 근거 약함 — 판매처 콘텐츠 위주</small></span></li>
+    </ul>
+
+    <div class="space-callout">
+      <div class="head">📐 10평대 특화</div>
+      <p style="margin:0;">하이체어는 부피가 크므로, 벽 부착형이나 식탁 의자에 장착하는 접이식 부스터형을 우선 고려하는 편이 공간 절약에 유리합니다.</p>
+    </div>
+
+    <details class="evidence">
+      <summary>근거·해석 보기</summary>
+      <div class="evidence-body">
+        <div class="stat-strip">
+          <div class="stat"><div class="k">체중 (남)</div><div class="v">7.0–7.9kg</div></div>
+          <div class="stat"><div class="k">체중 (여)</div><div class="v">6.4–7.3kg</div></div>
+          <div class="stat"><div class="k">신장 (남)</div><div class="v">63.9–67.6cm</div></div>
+          <div class="stat"><div class="k">신장 (여)</div><div class="v">62.1–65.7cm</div></div>
+        </div>
+        <div class="fact"><span class="tag">아이사랑 포털 · 1차 자료</span><p style="margin:0;">목을 완전히 가누고 잠깐 앉을 수 있으며, 손을 뻗어 물건을 잡으려 시도하고 뒤집기·기기를 시작합니다.</p></div>
+        <div class="fact"><span class="tag">질병관리청 국가건강정보포털 · 1차 자료</span><p style="margin:0;">WHO 및 국내 소아청소년과학회 권장 이유식 시작 시기는 생후 4~6개월입니다. 모유 수유아는 6개월 이후, 분유 수유아는 4~6개월이 권장됩니다.</p></div>
+      </div>
+    </details>
+  </section>
+
+  <section id="m6-9">
+    <div class="section-head"><span class="stage-badge">6–9</span><h2 class="title">앉기 · 잡고 서기 · 낯가림</h2></div>
+    <p class="subtitle">7개월부터 혼자 앉고, 8개월부터 잡고 일어섭니다</p>
+
+    <div class="keyline">
+      <span class="icon">🛡️</span>
+      <span class="text">7개월부터 혼자 앉기 — 안전문·모서리보호대 보강 시점</span>
+    </div>
+
+    <ul class="points">
+      <li><span class="ico">🚪</span><span class="label">안전문(게이트)</span></li>
+      <li><span class="ico">🛡️</span><span class="label">모서리 보호대 추가 보강</span></li>
+      <li><span class="ico">🧸</span><span class="label">보행기/쏘서<small>선택 — 소아과 의견이 갈리는 주제, 이번 조사에선 다루지 않음</small></span></li>
+      <li><span class="ico">👋</span><span class="label">짝짜꿍·까꿍 등 상호작용 놀이 도구</span></li>
+    </ul>
+
+    <details class="evidence">
+      <summary>근거 보기</summary>
+      <div class="evidence-body">
+        <div class="stat-strip">
+          <div class="stat"><div class="k">체중 (남)</div><div class="v">8.3–8.9kg</div></div>
+          <div class="stat"><div class="k">체중 (여)</div><div class="v">7.6–8.2kg</div></div>
+          <div class="stat"><div class="k">지지없이 앉기</div><div class="v">7개월~</div></div>
+          <div class="stat"><div class="k">잡고 서기</div><div class="v">8개월~</div></div>
+        </div>
+        <div class="fact"><span class="tag">아이사랑 포털 · 1차 자료</span><p style="margin:0;">7개월부터 지지 없이 앉고, 8개월부터 가구를 잡고 일어서기 시작합니다. 9개월부터 단어 의미를 이해하기 시작하며 낯가림이 나타납니다.</p></div>
+      </div>
+    </details>
+  </section>
+
+  <section id="legal">
+    <div class="section-head"><h2 class="title">법적·안전 필수 확인</h2></div>
+    <div class="warn-box">
+      <div class="head">⚠ 놓치면 과태료 · 안전 이슈</div>
+      <ul>
+        <li><strong>카시트 미장착 시 과태료 6만원</strong> (도로교통법 제50조 1항, 법제처) — 만 6세 미만 전 기간, 퇴소 당일부터 해당</li>
+        <li><strong>매트리스는 단단하게, 베개 없이</strong>, 12개월 이전 권고 (2건 재인용 확인, 원출처 AAP 문서 자체는 미확인)</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="products">
+    <div class="section-head"><h2 class="title">카테고리별 대표 제품</h2></div>
+    <p class="subtitle">구매링크·후기 — 2026-08-01 수집, 가격은 스냅샷이니 구매 직전 재확인</p>
+
+    <div class="product-grid">
+      <div class="product-card"><span class="ico">🚗</span><div class="body">
+        <div class="row1"><span class="cat">카시트 · 바구니형</span><span class="linktype">상품 페이지</span></div>
+        <p class="name"><a href="https://prod.danawa.com/info/?pcode=53786252" target="_blank" rel="noopener">맥시코시 카브리오픽스 TC</a></p>
+        <p class="review">독일 ADAC 안전점수 상위 10%, 20만원대 가성비 최상위권.</p>
+      </div></div>
+
+      <div class="product-card"><span class="ico">🚗</span><div class="body">
+        <div class="row1"><span class="cat">카시트 · 통합형</span><span class="linktype">랭킹 페이지</span></div>
+        <p class="name"><a href="https://mom-mom.net/rankings/%EC%98%81%EC%9C%A0%EC%95%84%20%EC%B9%B4%EC%8B%9C%ED%8A%B8" target="_blank" rel="noopener">듀얼픽스플러스 등 랭킹</a></p>
+        <p class="review">2026년 7월 기준 랭킹 상위, 38~79만원대. 개별 링크 아님 — 구매 전 재검색 필요.</p>
+      </div></div>
+
+      <div class="product-card"><span class="ico">🛏️</span><div class="body">
+        <div class="row1"><span class="cat">아기침대</span><span class="linktype">통합검색</span></div>
+        <p class="name"><a href="https://search.danawa.com/dsearch.php?query=%EC%95%84%EA%B8%B0%EC%B9%A8%EB%8C%80" target="_blank" rel="noopener">스토케 뉴슬리피</a></p>
+        <p class="review">신생아~9개월까지 형태 전환, 고가·부피 큼 — 10평대엔 부담 가능.</p>
+      </div></div>
+
+      <div class="product-card"><span class="ico">🧴</span><div class="body">
+        <div class="row1"><span class="cat">젖병소독기</span><span class="linktype">상품 페이지</span></div>
+        <p class="name"><a href="https://prod.danawa.com/info/?pcode=79403474" target="_blank" rel="noopener">블루케어 유팡 젖병 살균기</a></p>
+        <p class="review">UV살균+적외선저온건조. 수유실에도 흔히 비치되는 대중적 국민템.</p>
+      </div></div>
+
+      <div class="product-card"><span class="ico">🧴</span><div class="body">
+        <div class="row1"><span class="cat">젖병소독기 · 대안</span><span class="linktype">통합검색</span></div>
+        <p class="name"><a href="https://search.danawa.com/dsearch.php?query=%EC%A0%96%EB%B3%91%EC%86%8C%EB%8F%85%EA%B8%B0" target="_blank" rel="noopener">스펙트라 UV-LED (SPES-02W)</a></p>
+        <p class="review">20만원 초반대, 스펙트라 라인 베스트셀러.</p>
+      </div></div>
+
+      <div class="product-card"><span class="ico">🤱</span><div class="body">
+        <div class="row1"><span class="cat">유축기</span><span class="linktype">통합검색</span></div>
+        <p class="name"><a href="https://search.danawa.com/dsearch.php?query=%EC%9C%A0%EC%B6%95%EA%B8%B0" target="_blank" rel="noopener">스펙트라 S2+</a> / <a href="https://search.danawa.com/dsearch.php?query=%EC%9C%A0%EC%B6%95%EA%B8%B0" target="_blank" rel="noopener">메델라 스윙·심포니</a></p>
+        <p class="review">스펙트라는 국민템 랭킹 1위·가성비, 메델라는 후기 최다·고가.</p>
+      </div></div>
+
+      <div class="product-card"><span class="ico">🎒</span><div class="body">
+        <div class="row1"><span class="cat">아기띠 / 힙시트</span><span class="linktype">랭킹 페이지</span></div>
+        <p class="name"><a href="https://mom-mom.net/rankings/%EC%8A%AC%EB%A7%81/%EC%95%84%EA%B8%B0%EB%9D%A0" target="_blank" rel="noopener">베이비뵨 미니 메쉬 / 옴니360</a></p>
+        <p class="review">힙시트는 생후 6개월 앉기 이후 사용 권장(그 전엔 아기띠).</p>
+      </div></div>
+
+      <div class="product-card"><span class="ico">🍽️</span><div class="body">
+        <div class="row1"><span class="cat">하이체어</span><span class="linktype">비교 후기</span></div>
+        <p class="name"><a href="https://withloah.kr/%EC%A7%81%EC%A0%91-%EC%8D%A8%EB%B3%B4%EA%B3%A0-%EC%95%84%EA%B8%B0%EC%8B%9D%ED%83%81%EC%9D%98%EC%9E%90-%EC%B6%94%EC%B2%9C-%EB%B9%84%EA%B5%90-best6/" target="_blank" rel="noopener">스토케 트립트랩</a> / 야마토야 뉴마터나</p>
+        <p class="review">트립트랩은 최근 가격 인상, 뉴마터나는 가성비 — 10평대엔 부스터형 추천(해석).</p>
+      </div></div>
+
+      <div class="product-card"><span class="ico">🧸</span><div class="body">
+        <div class="row1"><span class="cat">범퍼침대 대안</span><span class="linktype">카테고리 페이지</span></div>
+        <p class="name"><a href="https://m.alzipmat.com/goods/goods_list.php?cateCd=007" target="_blank" rel="noopener">알집매트 베이비룸</a></p>
+        <p class="review">낙상방지, 범퍼침대보다 개방감 좋다는 후기.</p>
+      </div></div>
+
+      <div class="product-card"><span class="ico">🧸</span><div class="body">
+        <div class="row1"><span class="cat">범퍼침대</span><span class="linktype">랭킹 페이지</span></div>
+        <p class="name"><a href="https://mom-mom.net/rankings/%EB%B2%94%ED%8D%BC%EC%B9%A8%EB%8C%80" target="_blank" rel="noopener">하이가드 특대형 등</a></p>
+        <p class="review">2026년 6월 랭킹 상위, 18~42만원대.</p>
+      </div></div>
+
+      <div class="product-card"><span class="ico">🛡️</span><div class="body">
+        <div class="row1"><span class="cat">모서리보호대</span><span class="linktype">상품 페이지</span></div>
+        <p class="name"><a href="https://lavibebe.com/product/%EB%9D%BC%EB%B9%84%EB%B2%A0%EB%B2%A0-%EC%95%84%EA%B8%B0-%EB%AA%A8%EC%84%9C%EB%A6%AC%EB%B3%B4%ED%98%B8%EB%8C%80-%EC%86%90%EB%81%BC%EC%9E%84%EB%B0%A9%EC%A7%80-%EA%B8%B0%EB%91%A5-%EC%BD%94%EB%84%88-%EC%95%88%EC%A0%84%EC%9A%A9%ED%92%88-%ED%88%AC%EB%AA%85-%EB%AA%A8%EC%84%9C%EB%A6%AC%EA%B0%80%EB%93%9C-%EC%8A%A4%ED%86%A0%ED%8D%BC/87/" target="_blank" rel="noopener">라비베베 투명 모서리가드</a></p>
+        <p class="review">무타공 접착식, 투명이라 인테리어 방해 적음 — 개별 후기는 미확인.</p>
+      </div></div>
+    </div>
+
+    <details class="evidence">
+      <summary>구매링크를 찾지 못한 항목 보기</summary>
+      <div class="evidence-body">
+        <ul class="unverified-list">
+          <li>속싸개, 신생아 욕조, 체온계 — 개별 제품 후기 미확인</li>
+          <li>유모차 개별 모델 — <a href="https://mom-mom.net/rankings/%ED%9C%B4%EB%8C%80%EC%9A%A9%20%EC%9C%A0%EB%AA%A8%EC%B0%A8" target="_blank" rel="noopener">랭킹 페이지만 확인</a></li>
+          <li>안전문(게이트), 저상형 패밀리침대 — 개별 모델 미확인</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <section id="pitfalls">
+    <div class="section-head"><h2 class="title">주의할 점</h2></div>
+    <div class="warn-box">
+      <div class="head">🧭 함정 노트</div>
+      <ul>
+        <li>"10평대 육아용품 배치"에 대한 공식·통계적 가이드는 없습니다. 검색되는 자료는 전부 인테리어 매체·개인 후기 수준이므로, 이 문서의 10평대 관련 조언은 모두 "해석"이며 근거가 약합니다.</li>
+        <li>"소아청소년과 전문의 검토"를 표방하는 콘텐츠(육아템 연구소 등)도 전문의 실명·소속은 확인되지 않습니다 — 확정적 의료 권고로 받아들이지 마세요.</li>
+        <li>"카시트 미착용 시 사망 가능성 99% 증가" 수치는 재인용만 반복 확인되며 1차 통계 출처는 찾지 못했습니다(미확인).</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="sources" style="border-bottom:none;">
+    <div class="section-head"><h2 class="title">출처</h2></div>
+    <details class="evidence" open>
+      <summary>1차·2차 자료 전체 보기 (9건)</summary>
+      <div class="evidence-body">
+        <div class="source-group">
+          <h3>1차 자료 (정부·공공기관)</h3>
+          <ol class="sources">
+            <li><a href="https://www.childcare.go.kr/?menuno=289" target="_blank" rel="noopener">임신육아종합포털 아이사랑 — 1~3개월 성장발달</a> <span class="date">· 2026-08-01 수집</span></li>
+            <li><a href="https://www.childcare.go.kr/?menuno=290" target="_blank" rel="noopener">임신육아종합포털 아이사랑 — 4~6개월 성장발달</a> <span class="date">· 2026-08-01 수집</span></li>
+            <li><a href="https://www.childcare.go.kr/?menuno=291" target="_blank" rel="noopener">임신육아종합포털 아이사랑 — 7~9개월 성장발달</a> <span class="date">· 2026-08-01 수집</span></li>
+            <li><a href="https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=5470" target="_blank" rel="noopener">국가건강정보포털(질병관리청) — 이유기보충식</a> <span class="date">· 2026-08-01 수집</span></li>
+            <li><a href="https://www.easylaw.go.kr/CSP/CnpClsMain.laf?csmSeq=684&ccfNo=3&cciNo=1&cnpClsNo=1" target="_blank" rel="noopener">찾기쉬운 생활법령정보(법제처) — 카시트 법적 의무</a> <span class="date">· 2026-08-01 수집</span></li>
+          </ol>
+        </div>
+        <div class="source-group">
+          <h3>2차 자료 (전문 매체·커뮤니티)</h3>
+          <ol class="sources">
+            <li><a href="https://www.babyitem.co.kr/tips/25" target="_blank" rel="noopener">육아템 연구소 — 신생아 준비물 체크리스트</a></li>
+            <li><a href="https://gooddaddy.kr/blog/0007-newborn-baby-supplies-checklist/" target="_blank" rel="noopener">굿대디 — 유아용품 종류 완벽 가이드</a></li>
+            <li><a href="https://www.threads.com/@sisimomhome/post/DCYK5-EvioG?hl=ko" target="_blank" rel="noopener">Threads @sisimomhome — 소형 공간 침구 대안 후기</a></li>
+            <li><a href="https://ohou.se/advices/6333" target="_blank" rel="noopener">오늘의집 — 좁은집 공간활용 팁</a></li>
+          </ol>
+        </div>
+      </div>
+    </details>
+  </section>
+
+</main>
+
+<footer>
+  <span>신생아 필수 육아용품 가이드 · 리서치 에이전트</span>
+  <span>최종 갱신 2026-08-01</span>
+</footer>
+
+<script>
+(function(){
+  var c = document.getElementById('growthChart');
+  if(!c) return;
+  var stages = [
+    {label:'0–1개월', w:5.5},
+    {label:'1–3개월', w:5.7},
+    {label:'4–6개월', w:7.5},
+    {label:'6–9개월', w:8.6}
+  ];
+  function draw(){
+    var dpr = window.devicePixelRatio || 1;
+    var rect = c.getBoundingClientRect();
+    var h = 150;
+    c.width = rect.width * dpr; c.height = h * dpr;
+    c.style.height = h + 'px';
+    var ctx = c.getContext('2d');
+    ctx.scale(dpr, dpr);
+    var w = rect.width;
+    ctx.clearRect(0,0,w,h);
+
+    var styles = getComputedStyle(document.documentElement);
+    var accent = styles.getPropertyValue('--accent').trim();
+    var accentSoft = styles.getPropertyValue('--accent-soft').trim();
+    var ink = styles.getPropertyValue('--ink').trim();
+    var muted = styles.getPropertyValue('--muted-2').trim();
+    var font = styles.getPropertyValue('--font-sans').trim() || 'sans-serif';
+    var mono = styles.getPropertyValue('--font-mono').trim() || 'monospace';
+
+    var n = stages.length;
+    var gap = 18;
+    var barW = (w - gap*(n-1)) / n;
+    var maxW = Math.max.apply(null, stages.map(function(s){return s.w;}));
+    var top = 14, bottom = h - 34;
+    var avail = bottom - top;
+
+    stages.forEach(function(s, i){
+      var x = i * (barW + gap);
+      var barH = avail * (s.w / maxW);
+      var y = bottom - barH;
+
+      ctx.fillStyle = accentSoft;
+      ctx.beginPath();
+      ctx.roundRect ? ctx.roundRect(x, top, barW, avail, 8) : ctx.rect(x, top, barW, avail);
+      ctx.fill();
+
+      ctx.fillStyle = accent;
+      ctx.beginPath();
+      if(ctx.roundRect) ctx.roundRect(x, y, barW, barH, 8); else ctx.rect(x, y, barW, barH);
+      ctx.fill();
+
+      ctx.fillStyle = i === n-1 ? '#fff' : ink;
+      ctx.font = '700 12px ' + mono;
+      ctx.textAlign = 'center';
+      ctx.fillText(s.w + 'kg', x + barW/2, y + 16 > bottom - 6 ? y - 8 : y + 16);
+
+      ctx.fillStyle = muted;
+      ctx.font = '600 11px ' + font;
+      ctx.fillText(s.label, x + barW/2, bottom + 18);
+    });
+  }
+  draw();
+  window.addEventListener('resize', draw);
+})();
+</script>
+</body>
+</html>
