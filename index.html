@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark">
-<title>Parenting Research — 리서치 노트 모음</title>
+<title>리서치 노트 모음</title>
 <style>
   :root{
     --ink:#EDEEF4; --paper:#0A0A0D; --paper-raised:#131318; --accent:#9AA3F5; --accent-ink:#12121C;
@@ -53,10 +53,18 @@
   .doc-card .meta{font-family:var(--font-mono); font-size:11.5px; color:var(--muted-2); display:flex; gap:12px; flex-wrap:wrap;}
   .doc-card .arrow{float:right; color:var(--muted-2); font-size:14px;}
   .doc-card:hover .arrow{color:var(--accent);}
+  .doc-card.work{border-style:dashed;}
+  .doc-card.work .tag{color:var(--muted); background:var(--tag2-soft, #1C1D26);}
 
   .empty-note{
     border:1px dashed var(--line); border-radius:12px; padding:18px 20px; color:var(--muted-2); font-size:13.5px;
   }
+
+  .cat-section{margin-bottom:44px;}
+  .cat-head{display:flex; align-items:baseline; gap:10px; margin:0 0 4px;}
+  .cat-head h2{font-size:15px; font-weight:800; margin:0; letter-spacing:-.005em;}
+  .cat-head .icon{font-size:15px;}
+  .cat-sub{font-size:13px; color:var(--muted-2); margin:0 0 16px;}
 
   footer{max-width:720px; margin:0 auto; padding:36px 20px 60px; color:var(--muted-2); font-size:12.5px;
     border-top:1px solid var(--line); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
@@ -72,24 +80,38 @@
 
 <header class="hero">
   <div class="hero-inner">
-    <p class="eyebrow"><span class="dot"></span>Parenting Research</p>
+    <p class="eyebrow"><span class="dot"></span>Research Notes</p>
     <h1>리서치 노트 모음</h1>
-    <p class="sub">가족과 공유하기 위해 정리한 육아·생활 리서치 문서 목록입니다. 출처와 수집일을 함께 표기합니다.</p>
+    <p class="sub">공유하기 위해 정리한 리서치 문서 목록입니다. 출처와 수집일을 함께 표기하며, 개인·업무 자료를 구분해 둡니다.</p>
   </div>
 </header>
 
 <main class="wrap">
-  <p class="list-head">문서 (1)</p>
 
-  <a class="doc-card" href="./newborn-essentials.html">
-    <span class="arrow">→</span>
-    <div class="tags"><span class="tag">육아용품</span><span class="tag">체크리스트</span></div>
-    <h2>신생아 필수 육아용품 가이드</h2>
-    <p>조리원 퇴소 후 무엇부터 사야 할지 — 10평대 주거 기준으로 아기 발달단계에 맞춰 정리했습니다.</p>
-    <div class="meta"><span>2026-08-01</span><span>아이사랑 · 질병관리청 · 법제처</span></div>
-  </a>
+  <section class="cat-section" id="personal">
+    <div class="cat-head"><span class="icon">🏠</span><h2>개인</h2></div>
+    <p class="cat-sub">가족·지인과 공유하는 자료</p>
 
-  <!-- 새 문서가 늘어나면 위와 같은 형식의 .doc-card를 추가한다 -->
+    <a class="doc-card" href="./personal/newborn-essentials.html">
+      <span class="arrow">→</span>
+      <div class="tags"><span class="tag">육아용품</span><span class="tag">체크리스트</span></div>
+      <h2>신생아 필수 육아용품 가이드</h2>
+      <p>조리원 퇴소 후 무엇부터 사야 할지 — 10평대 주거 기준으로 아기 발달단계에 맞춰 정리했습니다.</p>
+      <div class="meta"><span>2026-08-01</span><span>아이사랑 · 질병관리청 · 법제처</span></div>
+    </a>
+
+    <!-- 새 개인 문서가 늘어나면 위와 같은 형식의 .doc-card를 site/personal/ 아래에 추가하고 여기 링크를 붙인다 -->
+  </section>
+
+  <section class="cat-section" id="work">
+    <div class="cat-head"><span class="icon">💼</span><h2>업무</h2></div>
+    <p class="cat-sub">회사·유관 업무 관계자와 공유하는 자료</p>
+
+    <div class="empty-note">아직 등록된 업무 문서가 없습니다. 새 문서는 <code>site/work/</code> 아래에 추가됩니다.</div>
+
+    <!-- 첫 업무 문서가 생기면 .empty-note를 지우고 위 개인 섹션과 같은 형식의 .doc-card(work 클래스 추가)를 넣는다 -->
+  </section>
+
 </main>
 
 <footer>
