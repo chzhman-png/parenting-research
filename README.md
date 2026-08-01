@@ -6,3 +6,4 @@
 
 이 브랜치(`main`, GitHub 표시상) 루트의 정적 HTML 파일을 GitHub Pages가 그대로 서빙합니다
 (Settings → Pages → Deploy from a branch).
+
